@@ -3,6 +3,7 @@ import ExchangeRate from './components/exchangeRate'
 import styled from 'styled-components'
 
 function App() {
+  console.log('hello')
   return (
     <Container>
       <ExchangeRate />
