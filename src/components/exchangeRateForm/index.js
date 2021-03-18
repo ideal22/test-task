@@ -37,9 +37,10 @@ function ExchangeRateForm(props) {
 
 const Container = styled.div``
 const FromContainer = styled.div`
-  border: 1px solid silver;
+  border: 1px solid #00e6e6;
   border-radius: 10px;
   padding: 5px;
+  box-shadow: 1px 1px 8px #00e6e6;
 `
 const Input = styled.input`
   border: none;

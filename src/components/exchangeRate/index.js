@@ -10,8 +10,8 @@ function ExchangeRate() {
   const [amount, setAmount] = useState(1)
   const [isFromAmount, setIsFromAmount] = useState(true)
   const [exchangeRate, setExchangeRate] = useState()
-
-  console.log(exchangeRate, 'rate')
+  // const [rowInputList, setRowInputList] = useState([])
+  // const [columnInputList, setColumnInputList] = useState([])
 
   let fromAmount, toAmount
 
@@ -69,15 +69,18 @@ function ExchangeRate() {
 
       <EqualSign>=</EqualSign>
 
-      <ExchangeRateForm
-        title="To"
-        style={{ marginLeft: '40px' }}
-        currencyOptions={currencyOptions}
-        selectedCurrency={toCurrency}
-        onChangeCurrency={(e) => setToCurrency(e.target.value)}
-        amount={toAmount}
-        onChangeAmount={onChangeToAmount}
-      />
+      <Cnt>
+        <ExchangeRateForm
+          title="To"
+          style={{ marginLeft: '40px', margingRigth: '20px' }}
+          currencyOptions={currencyOptions}
+          selectedCurrency={toCurrency}
+          onChangeCurrency={(e) => setToCurrency(e.target.value)}
+          amount={toAmount}
+          onChangeAmount={onChangeToAmount}
+        />
+        <Button>+</Button>
+      </Cnt>
     </Container>
   )
 }
@@ -92,8 +95,30 @@ const Container = styled.div`
 const EqualSign = styled.div`
   align-self: flex-end;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 400;
   padding-bottom: 5px;
+`
+
+const Button = styled.button`
+  align-self: flex-end;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #7acc00;
+  margin-left: 20px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const Cnt = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export default ExchangeRate
